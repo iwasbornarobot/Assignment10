@@ -1,0 +1,131 @@
+body {
+	/* background: black; */
+	color: #364156;
+	background: black;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	}
+
+ul { 
+  font-weight: bold;
+  text-align: center;
+  list-style: none;
+}
+ul li { 
+
+  display: inline-block;
+  position: relative;
+  padding: 20px 40px;
+  background: #708090;;
+  cursor: pointer;
+}
+ul li:hover {
+  background: #555;
+  color: #fff;
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: -10000px;
+  width: 150px;
+}
+ul li ul li {
+  background: #555;
+  display: block;
+  color: #fff;
+  margin-left: 0;
+}
+ul li:hover ul {
+  display: block;
+  left: 0px;
+  
+}
+ul li ul li:hover {
+  background: #222;
+}
+/* Profile
+--------------------------*/
+h1 {
+	font-size: 300%;
+}
+h1, h2 { 
+	font-family: 'Crete Round', serif;
+}
+
+header {
+
+	background: #212D40;
+	color: #F7FFF7;
+	padding: 2%;
+}
+img {
+	height: 300px;
+}
+
+/* Projects
+--------------------------*/
+.projects {
+	grid-area: columnOne;
+	background: #364156;
+	padding: 2%;
+	color: white;
+	overflow: auto;
+}
+
+
+/* Work Experience
+--------------------------*/
+.columnTwo {
+	grid-area: columnTwo;
+}
+.work-experience {
+	border: 1px solid white;
+	padding: 20px;
+	
+}
+
+/* Education
+--------------------------*/
+.education {
+	border: 1px solid white;
+	padding: 20px;
+}
+
+/* Contact InfoBackground
+--------------------------*/
+.footer {
+	grid-area: footer;
+	font-family: 'Open Sans', sans-serif;
+	background: #11151C;
+	color: #F7FFF7;
+	padding: 2%;
+}
+a, a:hover, a:visited {
+	color: white;
+}
+
+
+.contentWrapper {
+	display: grid;
+	grid-template-columns: 15% 15% 40% 15% 15%;
+	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-areas:
+	" columnOne columnOne columnOne columnTwo columnTwo"
+	" columnOne columnOne columnOne columnTwo columnTwo"
+	" footer footer footer footer footer "
+}
+/* mediaquery small screen 
+---------------------------*/
+
+@media only screen and (max-width: 600px) {
+	.contentWrapper {
+	display: grid;
+	grid-template-columns: 5% 90% 5%;
+	grid-template-rows: 1fr 2fr 100px;
+	grid-template-areas:
+	" . columnTwo . "
+	" . columnOne . "
+	" . footer . "
+}
+}	
